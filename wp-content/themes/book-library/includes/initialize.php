@@ -76,7 +76,7 @@ function book_library_enqueue_styles() {
 add_action('wp_enqueue_scripts', 'book_library_enqueue_scripts');
 
 function book_library_enqueue_scripts() {
-    //wp_enqueue_style('azad-trading-style', get_stylesheet_uri());
+    wp_enqueue_style('book-library-theme-main-css', get_stylesheet_uri());
 
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
