@@ -1,9 +1,16 @@
 <?php
-/**
- * Enqueue styles
- */
-function book_theme_enqueue_styles() {
-    wp_enqueue_style('book-library-theme-css', get_stylesheet_directory_uri() . '/style.css', array('astra-theme-css'), '1.0', 'all');
-}
 
-add_action('wp_enqueue_scripts', 'book_theme_enqueue_styles', 15);
+/*
+ * Declare CONSTANTS
+ */
+define('DS', DIRECTORY_SEPARATOR);
+define('THEME_PATH', dirname(__FILE__) . DS);
+define('THEME_INCLUDES_PATH', THEME_PATH . DS . 'includes' . DS);
+define('THEME_DOMAIN', 'book-library');
+
+/*
+ * Include Required Files
+ */
+include_once THEME_INCLUDES_PATH . 'initialize.php';
+include_once THEME_INCLUDES_PATH . 'post-type' . DS . 'books.php';
+include_once THEME_INCLUDES_PATH . 'meta-box' . DS . 'books.php';
